@@ -1,0 +1,3 @@
+dynamicalsystems/ : a module that defines a generic interface for dynamical systems, as well as several specific implementations (exponential, sigmoid, spring-damper)
+
+dynamicalsystems /：定义动态系统通用接口的模块，以及几个特定实现（指数，S形，弹簧阻尼器）

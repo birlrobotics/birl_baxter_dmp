@@ -1,0 +1,10 @@
+*~
+*.bak
+*.back
+*.pyc
+build_dir*
+bin/
+bin_test/
+thirdparty/
+include/
+lib/
