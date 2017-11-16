@@ -4,8 +4,9 @@ Created on Mon Nov  6 16:48:02 2017
 
 @author: tony
 """
-
-import dmp_discrete
+import sys
+sys.path.append("../")
+import pydmps.dmp_discrete as dmp_discrete
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -119,7 +120,7 @@ def main():
 #######################################  saving data to a file 
   
         
-        WriteFileDir = "../data_sets/baxter_dmp_runing.txt"   ## the path of generated dmp traj
+        WriteFileDir = "./data_sets/baxter_dmp_runing.txt"   ## the path of generated dmp traj
         plan_len = len(y_track[:,0])
         f = open(WriteFileDir,'w')
         f.write('time,')

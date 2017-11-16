@@ -130,6 +130,7 @@ void learnFromDemo(const DMPTraj &demo,
                     curr_dmp->f_targets.push_back(f_targets[i]);
                 }
 		dmp_list.push_back(*curr_dmp);
+
 	}
 
 	delete[] x_demo;

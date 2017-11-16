@@ -14,7 +14,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
-
+import sys
+sys.path.append("../")
+import pydmps.dmp_discrete as dmp_discrete
 import numpy as np
 import matplotlib.pyplot as plt
 import dmp_discrete

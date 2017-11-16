@@ -4,11 +4,12 @@ Created on Mon Nov  6 16:48:02 2017
 
 @author: tony
 """
-import dmp_discrete
+import sys
+sys.path.append("../")
+import pydmps.dmp_discrete as dmp_discrete
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
 from mpl_toolkits.mplot3d import Axes3D
 
 
