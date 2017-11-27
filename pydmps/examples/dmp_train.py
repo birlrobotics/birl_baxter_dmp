@@ -5,8 +5,15 @@ import pydmps.dmp_discrete
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-
+# please install pydmp first 
+# https://github.com/studywolf/pydmps
+# input
+# @train_set  list 
+# @n_dmps     Integer   depends on the traj demonsion
+# @n_bfs      Integer   how many basis functions you wanna set
+# output
+# w_avarage   list       aveage the weights
+# type_of_basefunc  string      the type of basis fuction
 def train(train_set,n_dmps=7,n_bfs=100): 
     w_list = []
     dmp = pydmps.dmp_discrete.DMPs_discrete(n_dmps, n_bfs)

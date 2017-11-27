@@ -14,7 +14,13 @@ import pandas as pd
 import numpy as np
 import sys
 
-
+#input
+# @ starting_pose  list  depend on the dimension
+# @ ending_pose    list 
+# @ weight_mat     list
+# @ tau            time scaling
+# output
+# @ y_track        list     generalized traj
 
 
 def dmp_imitate(starting_pose, ending_pose, weight_mat, tau=1, n_dmps=7, n_bfs=100, base_fuc="Gaussian"):
