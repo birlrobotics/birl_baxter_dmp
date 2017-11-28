@@ -1,10 +1,13 @@
+#!/usr/bin/python
 import pandas as pd
 import numpy as np
-from dmp_train import train
-from dmp_generalize import dmp_imitate
+from birl_baxter_dmp.dmp_train import train
+from birl_baxter_dmp.dmp_generalize import dmp_imitate
 
+import os 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+data = os.path.join(dir_path, "3D_demo_data.txt")
 
-data = "3D_demo_data.txt"
 PointCount = len(open(data,'rU').readlines())
 Colum0_Traj=[0.0]*PointCount
 Colum1_Traj=[0.0]*PointCount
