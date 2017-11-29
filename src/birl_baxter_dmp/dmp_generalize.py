@@ -25,7 +25,7 @@ import sys
 
 def dmp_imitate(starting_pose, ending_pose, weight_mat, tau=1, n_dmps=7, n_bfs=100, base_fuc="Gaussian"):
 
-    dmp = pydmps.dmp_discrete.DMPs_discrete(n_dmps=n_dmps, n_bfs=n_bfs, w=weight_mat)
+    dmp = pydmps.dmp_discrete.DMPs_discrete(dmps=n_dmps, bfs=n_bfs, w=weight_mat)
 
     for i in range(n_dmps):
         dmp.y0[i] = starting_pose[i]  #set the initial state

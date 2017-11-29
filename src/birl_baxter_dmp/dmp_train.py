@@ -1,8 +1,8 @@
-import sys
-sys.path.append("../")
-import pydmps
-import pydmps.dmp_discrete
 
+
+
+import pydmps.dmp_discrete
+import ipdb
 import pandas as pd
 import numpy as np
 # please install pydmp first 
@@ -16,7 +16,8 @@ import numpy as np
 # type_of_basefunc  string      the type of basis fuction
 def train(train_set,n_dmps=7,n_bfs=100): 
     w_list = []
-    dmp = pydmps.dmp_discrete.DMPs_discrete(n_dmps=n_dmps, n_bfs=n_bfs)
+
+    dmp = pydmps.dmp_discrete.DMPs_discrete(dmps=n_dmps, bfs=n_bfs)
     for trial in train_set:     # for every trial
         dmp.imitate_path(y_des=trial) #train 7 demonsion
         w_list.append(dmp.w)
