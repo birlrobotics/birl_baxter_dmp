@@ -14,9 +14,9 @@ import numpy as np
 # output
 # w_avarage   list       aveage the weights
 # type_of_basefunc  string      the type of basis fuction
-def train(train_set,n_dmps=7,n_bfs=100): 
+def train(train_set, n_bfs=100): 
     w_list = []
-
+    n_dmps = train_set[0].shape[1]
     dmp = pydmps.dmp_discrete.DMPs_discrete(dmps=n_dmps, bfs=n_bfs)
     for trial in train_set:     # for every trial
         dmp.imitate_path(y_des=trial) #train 7 demonsion

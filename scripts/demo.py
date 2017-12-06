@@ -21,7 +21,8 @@ for i in range(PointCount):
 
 train_set = np.array([traj,traj])
 
-param, _ = train(train_set, n_dmps=3)
+
+param, base_function = train(train_set)
 
 
 start_point = [1.0000000e-02 , -8.0985915e-01 , -7.9287305e-01]
