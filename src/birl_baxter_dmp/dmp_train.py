@@ -6,18 +6,22 @@ import sys
 # please install pydmp first 
 # https://github.com/studywolf/pydmps
 # input
-# @train_set  list 
+# @list_of_traj_mats  list 
 # @n_dmps     Integer   depends on the traj demonsion
 # @n_bfs      Integer   how many basis functions you wanna set
 # output
 # w_avarage   list       aveage the weights
 # type_of_basefunc  string      the type of basis fuction
-def train(train_set, n_bfs=100): 
-    n_dmps = train_set.shape[1]
+def train(list_of_traj_mats, n_bfs=100): 
+
+    trial_amount = len(list_of_traj_mats)
+    n_dmps = list_of_traj_mats[0].shape[1]
+
     dmp = pydmps.dmp_discrete.DMPs_discrete(n_dmps=n_dmps, n_bfs=n_bfs)
+
     w_list = []
-    for trials in train_set: 
-        dmp.imitate_path(y_des=trials) #train 7 demonsion    
+    for trial in list_of_traj_mats: 
+        dmp.imitate_path(y_des=trial.T) #train 7 demonsion    
         w_list.append(dmp.w)
     print w_list[0][0][0]
     w_sum = np.array(w_list)
