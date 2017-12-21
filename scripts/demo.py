@@ -43,7 +43,7 @@ param, base_function = train(train_set)
 start_point = traj[0]
 ending_point = traj[-1]
 
-y_track = dmp_imitate(starting_pose=start_point, ending_pose=ending_point, weight_mat=param,n_dmps=3 )
+y_track = dmp_imitate(starting_pose=start_point, ending_pose=ending_point, weight_mat=param )
 
 #creat fig
 fig=plt.figure()
