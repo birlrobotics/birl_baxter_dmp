@@ -19,14 +19,18 @@ def train(train_set, n_bfs=100):
     for trials in train_set: 
         dmp.imitate_path(y_des=trials) #train 7 demonsion    
         w_list.append(dmp.w)
-    print w_list
+    print w_list[0][0][0]
     w_sum = np.array(w_list)
     sum_j = 0  #iniliazition
     for j in w_sum:
         sum_j += j
     w_avarage = sum_j/len(w_list) 
-    ipdb.set_trace()
-    print w_avarage   
+    #ipdb.set_trace()
+    print w_avarage[0,0] 
+    if  w_list[0][0][0]==w_avarage[0,0] :
+        print "right, the avrage is right"
+    else:
+        print "wrong, the avrage is wrong"
     type_of_basefunc = "Gaussian" 
     return w_avarage, type_of_basefunc     
 

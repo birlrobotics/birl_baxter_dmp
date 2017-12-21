@@ -22,7 +22,11 @@ Colum2_Traj=[float(l.split()[2]) for l in open(data)]
 traj=[[0.0, 0.0, 0.0]]*PointCount
 for i in range(PointCount):
     traj[i]=[Colum0_Traj[i], Colum1_Traj[i], Colum2_Traj[i]]
-y_des = np.array([[Colum0_Traj,Colum1_Traj,Colum2_Traj],[Colum0_Traj,Colum1_Traj,Colum2_Traj]])
+y_des = np.array([[Colum0_Traj,Colum1_Traj,Colum2_Traj]]) # 
+'''
+If you wanna put in a set data, do it like this  y_des = np.array([[Colum0_Traj,Colum1_Traj,Colum2_Traj]])
+If you wanna put in many sets data, do it like this y_des = np.array([[Colum0_Traj,Colum1_Traj,Colum2_Traj],[Colum0_Traj,Colum1_Traj,Colum2_Traj]])
+'''
 ######
 #dmp = pydmps.dmp_discrete.DMPs_discrete(n_dmps=3, n_bfs=500, ay=np.ones(3)*10.0)
 #dmp.imitate_path(y_des=y_des, plot=True)
