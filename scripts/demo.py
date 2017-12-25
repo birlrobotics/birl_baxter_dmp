@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import pydmps
 import pydmps.dmp_discrete
+import ipdb
 
 import os 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -22,7 +23,8 @@ Colum2_Traj=[float(l.split()[2]) for l in open(data)]
 traj=[[0.0, 0.0, 0.0]]*PointCount
 for i in range(PointCount):
     traj[i]=[Colum0_Traj[i], Colum1_Traj[i], Colum2_Traj[i]]
-y_des = np.array([[Colum0_Traj,Colum1_Traj,Colum2_Traj]]) # 
+y_des = np.array([Colum0_Traj,Colum1_Traj,Colum2_Traj]) # 
+y_des = y_des.T
 '''
 If you wanna put in a set data, do it like this  y_des = np.array([[Colum0_Traj,Colum1_Traj,Colum2_Traj]])
 If you wanna put in many sets data, do it like this y_des = np.array([[Colum0_Traj,Colum1_Traj,Colum2_Traj],[Colum0_Traj,Colum1_Traj,Colum2_Traj]])
@@ -34,8 +36,7 @@ If you wanna put in many sets data, do it like this y_des = np.array([[Colum0_Tr
 ######
 
 
-train_set = y_des 
-
+train_set = [y_des] 
 
 param, base_function = train(train_set)
 
