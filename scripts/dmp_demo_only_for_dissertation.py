@@ -13,6 +13,7 @@ import os
 
 matplotlib.rcParams['font.family'] = "Times New Roman"
 matplotlib.rcParams['legend.fontsize'] = 12
+matplotlib.rcParams['font.size'] = 14
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 data = os.path.join(dir_path, "3D_demo_data.txt")
@@ -35,11 +36,11 @@ train_set = [y_des]
 param, base_function = train(train_set)
 
 #creat fig
-fig=plt.figure()
+fig=plt.figure()#figsize=(6,6)
 ax = Axes3D(fig)    
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
+ax.set_xlabel('x(m)')
+ax.set_ylabel('y(m)')
+ax.set_zlabel('z(m)')
 
 
 start_point = traj[0]
@@ -61,8 +62,9 @@ for i in range(track_sample):
     y_track = dmp_imitate(starting_pose=start_point, ending_pose=ending_point, weight_mat=param )
     #Plot plan fig    
     ax.plot(y_track[:,0],y_track[:,1],y_track[:,2],ls = "--", c = 'gray')
- 
-plt.legend()
+
+
+plt.legend(loc=5)
 plt.draw()
 fig.savefig('dmp_demo.eps', format='eps', dpi=300)
 fig.savefig('dmp_demo.png', format='png', dpi=300)
